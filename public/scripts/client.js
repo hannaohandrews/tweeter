@@ -26,8 +26,9 @@ $(document).ready(function () {
   ]
 
   const renderTweets = function(tweets) {
-    for (let tweet of tweetData)
-    
+    for (let tweet of tweetData){
+
+    }
   }
 
   const createTweetElement = function(data) {
