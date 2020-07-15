@@ -1,2 +1,0 @@
-# tweeter
-# tweeter_project
