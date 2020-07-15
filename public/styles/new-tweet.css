@@ -1,0 +1,34 @@
+label {
+  height: 120 px;
+  display: block;
+  background-color:#f4f1ec ;
+}
+textarea {
+  border:none;
+  background-color:#f4f1ec;
+  width: 100%;
+  border-bottom :5px solid black
+
+}
+.new-tweet div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+
+}
+
+button {
+  display: flex;
+  align-items: flex-end;
+  font-family: 'Bungee';
+  color: #f4f1ec;
+  background-color:#800008
+}
+
+output {
+  display: block;
+  align-items: flex-end;
+  font-family: 'Bungee';
+  color:#545149;
+}

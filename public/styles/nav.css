@@ -1,0 +1,16 @@
+
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 120 px;
+  display: block;
+  background-color:	#800008;
+  padding: 1.5em;
+  color: #ffffff;
+}
+
+span {
+  font-family: 'Bungee';
+}
