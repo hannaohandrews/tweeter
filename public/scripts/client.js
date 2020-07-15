@@ -23,13 +23,8 @@ $(document).ready(function () {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
 
-  const renderTweets = function(tweets) {
-    for (let tweet of tweetData){
-
-    }
-  }
 
   const createTweetElement = function(data) {
     const string = 
@@ -59,9 +54,34 @@ $(document).ready(function () {
   return $(string);
   
   }
-  const $tweet = createTweetElement(tweetData);
-  // console.log($tweet);
-  $('#tweets-container').append($tweet); 
+  const renderTweets = function(tweets) {
+    for (let tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('#tweets-container').append($tweet); 
+    }
+  }
+  renderTweets(tweetData);
+
+
+    $('#tweet-form').submit(function(event){
+      event.preventDault();
+      $.ajax({
+        url: '/tweets',
+        method: "POST",
+        data: $(this).serialize()
+      })
+      // .catch() 
+      
+      // .then() -> after posting tweet, show it on webpage
+    
+    })
+
+
+
+
+
+
+
 
 });
 
