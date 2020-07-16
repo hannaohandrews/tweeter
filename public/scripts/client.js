@@ -57,7 +57,7 @@ $(document).ready(function () {
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet); 
+      $('#tweets-container').prepend($tweet); 
     }
   }
   renderTweets(tweetData);
@@ -78,8 +78,9 @@ $(document).ready(function () {
     .then(function(respose){
       loadTweets(respose);
     })
-
    }
+   $('#tweet-text').val('');
+   $('.counter').val(140);
   });
   
 
