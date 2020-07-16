@@ -1,10 +1,11 @@
-// jQuery detects that the document is ready 
-// codes will only run once the page Document Object Model (DDM) is ready for JS codes to execude 
+// jQuery detects that the document is ready
+// codes will only run once the page Document Object Model (DDM) is ready for JS codes to execude
 $(document).ready(function () {
 
   const maxNumber = 140;
 
-  const tweetData = [{
+  const tweetData = [
+    {
       "user": {
         "name": "Newton",
         "avatars": "https://i.imgur.com/73hZDYK.png",
@@ -32,7 +33,7 @@ $(document).ready(function () {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   // inserts tweet with data input from users
   const createTweetElement = function (data) {
     const string =
@@ -57,10 +58,10 @@ $(document).ready(function () {
           </div>
         </div>  
       </footer>
-  </article>`
+  </article>`;
 
     return $(string);
-  }
+  };
 
   // accessing objects inside the arrays 
   // prepend makes it insert the latest tweet
@@ -70,7 +71,9 @@ $(document).ready(function () {
       $('#tweets-container').prepend($tweet);
     }
   }
+  
   renderTweets(tweetData);
+
 
   // redAlert = too long 
   // blueAlert = too short
@@ -89,16 +92,16 @@ $(document).ready(function () {
     } else {
       // ajax = asynchronous HTTP requests 
       $.ajax({
-          url: '/tweets/',
-          method: "POST",
-          data: $(this).serialize()
-        })
+        url: '/tweets/',
+        method: "POST",
+        data: $(this).serialize()
+      })
 
-        .then(function (respose) {
+        .then(function(respose) {
           $('.redAlert').slideUp(1000);
           $('.blueAlert').slideUp(1000);
           loadTweets(respose);
-        })
+        });
 
     }
 
@@ -115,11 +118,11 @@ $(document).ready(function () {
       })
       .then(function (response) {
         $("#tweets-container").empty();
-        renderTweets(response)
+        renderTweets(response);
       })
       .catch((err) => {
         alert('ERROR. Please try again')
-      })
+      });
   };
 
 
