@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
   const tweetData = [
@@ -25,6 +26,11 @@ $(document).ready(function () {
     }
   ];
 
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   const createTweetElement = function(data) {
     const string = 
@@ -37,7 +43,7 @@ $(document).ready(function () {
         <p class="article-username">${data.user.handle} </p> 
       </header>
         <p class="article-body">
-        ${data.content.text} 
+        ${escape(data.content.text)} 
         </p>        
       <footer class="article-footer">
         <div class="article-div-footer">
@@ -97,8 +103,6 @@ $(document).ready(function () {
       console.log('ERROR')
     })
   };
-
-
 
 
 });
