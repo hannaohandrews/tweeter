@@ -52,8 +52,8 @@ $(document).ready(function () {
   </article>`
 
   return $(string);
-  
   }
+
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -61,28 +61,34 @@ $(document).ready(function () {
     }
   }
   renderTweets(tweetData);
-
-
-    $('#tweet-form').submit(function(event){
-      event.preventDault();
-      $.ajax({
-        url: '/tweets',
-        method: "POST",
-        data: $(this).serialize()
-      })
-      // .catch() 
-      
-      // .then() -> after posting tweet, show it on webpage
     
+  
+  $('#tweet-form').submit(function(event){
+    event.preventDefault();
+    $.ajax({
+      url: '/tweets/',
+      method: "POST",
+      data: $(this).serialize()
     })
-
-
-
-
-
-
+    .then(function(respose){
+      console.log('done');
+      loadTweets(respose);
+    })
+  });
+  
+  const loadTweets = function () {
+    $.ajax({
+      url: '/tweets/',
+      method: 'GET'
+    })
+    .then(function(response){
+      $("#tweets-container").empty();
+      renderTweets(response)
+    })
+    .catch((err) => {
+      console.log('ERROR')
+    })
+  };
 
 
 });
-
-
