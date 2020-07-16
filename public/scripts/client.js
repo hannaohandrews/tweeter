@@ -70,23 +70,34 @@ $(document).ready(function () {
     
   
   $('#tweet-form').submit(function(event){
+
     event.preventDefault();
+
    if ($('#tweet-text').val().length > 140) {
-    alert('Your Tweet is too tweeeeety!')
+     $('.redAlert').slideDown(1000);
+     $('.whiteAlert').slideUp(1000);
    } else if ($('#tweet-text').val().length === 0) {
-    alert('Your Tweet is too empty. Write Something!')
+    $('.whiteAlert').slideDown(1000);
+    $('.redAlert').slideUp(1000);
    } else {
+   
     $.ajax({
       url: '/tweets/',
       method: "POST",
       data: $(this).serialize()
     })
+   
     .then(function(respose){
+      $('.redAlert').slideUp(1000);
+      $('.whiteAlert').slideUp(1000);
       loadTweets(respose);
     })
+
    }
-   $('#tweet-text').val('');
-   $('.counter').val(140);
+
+  $('#tweet-text').val('');
+  $('.counter').val(140);
+
   });
   
 
@@ -104,5 +115,8 @@ $(document).ready(function () {
     })
   };
 
+
+  $('#tweet-text').val('');
+  $('.counter').val(140);
 
 });

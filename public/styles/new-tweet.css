@@ -8,8 +8,8 @@ textarea {
   background-color:#f4f1ec;
   width: 100%;
   border-bottom :5px solid black
-
 }
+
 .new-tweet div {
   width: 100%;
   display: flex;
@@ -36,4 +36,25 @@ output {
 
 .tweet-text {
   word-wrap: normal;
+}
+
+.redAlert {
+  display:none;
+  color: red;
+  font-weight: bolder;
+  border: 5px solid red;
+  padding : 15px;
+  justify-self: center;
+
+}
+
+
+.whiteAlert {
+  display:none;
+  color: blue;
+  font-weight: bolder;
+  border: 5px solid blue;
+  padding : 15px;
+  justify-self: center;
+
 }
