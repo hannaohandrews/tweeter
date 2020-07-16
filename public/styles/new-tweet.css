@@ -44,17 +44,17 @@ output {
   font-weight: bolder;
   border: 5px solid red;
   padding : 15px;
-  justify-self: center;
+  align-items: center;
 
 }
 
 
-.whiteAlert {
+.blueAlert {
   display:none;
   color: blue;
   font-weight: bolder;
   border: 5px solid blue;
   padding : 15px;
-  justify-self: center;
+  align-items : flex-start
 
 }

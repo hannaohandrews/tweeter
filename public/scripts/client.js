@@ -1,4 +1,5 @@
-
+// jQuery detects that the document is ready 
+// codes will only run once the page Document Object Model (DDM) is ready for JS codes to execude 
 $(document).ready(function () {
 
   const tweetData = [
@@ -25,13 +26,13 @@ $(document).ready(function () {
       "created_at": 1461113959088
     }
   ];
-
+// To prevent from hackers to manipulate code
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
-
+// inserts tweet with data input from users
   const createTweetElement = function(data) {
     const string = 
     `<article class="article-article">
@@ -60,6 +61,8 @@ $(document).ready(function () {
   return $(string);
   }
 
+  // accessing objects inside the arrays 
+  // prepend makes it insert the latest tweet
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -68,19 +71,22 @@ $(document).ready(function () {
   }
   renderTweets(tweetData);
     
-  
+  // redAlert = too long 
+  // blueAlert = too short
   $('#tweet-form').submit(function(event){
-
+    
+// prevents the event from happening until called
     event.preventDefault();
 
+// use # for id , use . for class
    if ($('#tweet-text').val().length > 140) {
      $('.redAlert').slideDown(1000);
-     $('.whiteAlert').slideUp(1000);
+     $('.blueAlert').slideUp(1000);
    } else if ($('#tweet-text').val().length === 0) {
-    $('.whiteAlert').slideDown(1000);
+    $('.blueAlert').slideDown(1000);
     $('.redAlert').slideUp(1000);
    } else {
-   
+   // ajax = asynchronous HTTP requests 
     $.ajax({
       url: '/tweets/',
       method: "POST",
@@ -89,7 +95,7 @@ $(document).ready(function () {
    
     .then(function(respose){
       $('.redAlert').slideUp(1000);
-      $('.whiteAlert').slideUp(1000);
+      $('.blueAlert').slideUp(1000);
       loadTweets(respose);
     })
 
@@ -100,7 +106,7 @@ $(document).ready(function () {
 
   });
   
-
+// load the tweets once it is ready
   const loadTweets = function () {
     $.ajax({
       url: '/tweets/',
@@ -111,7 +117,7 @@ $(document).ready(function () {
       renderTweets(response)
     })
     .catch((err) => {
-      console.log('ERROR')
+      alert('ERROR. Please try again')
     })
   };
 
