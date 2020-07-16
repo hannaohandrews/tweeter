@@ -65,17 +65,24 @@ $(document).ready(function () {
   
   $('#tweet-form').submit(function(event){
     event.preventDefault();
+   if ($('#tweet-text').val().length > 140) {
+    alert('Your Tweet is too tweeeeety!')
+   } else if ($('#tweet-text').val().length === 0) {
+    alert('Your Tweet is too empty. Write Something!')
+   } else {
     $.ajax({
       url: '/tweets/',
       method: "POST",
       data: $(this).serialize()
     })
     .then(function(respose){
-      console.log('done');
       loadTweets(respose);
     })
+
+   }
   });
   
+
   const loadTweets = function () {
     $.ajax({
       url: '/tweets/',
@@ -89,6 +96,8 @@ $(document).ready(function () {
       console.log('ERROR')
     })
   };
+
+
 
 
 });

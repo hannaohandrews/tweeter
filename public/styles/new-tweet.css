@@ -15,6 +15,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+  word-wrap: normal;
 
 }
 
@@ -31,4 +32,8 @@ output {
   align-items: flex-end;
   font-family: 'Bungee';
   color:#545149;
+}
+
+.tweet-text {
+  word-wrap: normal;
 }

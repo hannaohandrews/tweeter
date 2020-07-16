@@ -58,7 +58,8 @@
   padding-bottom: 5%;
   margin-left: 3%;
   margin-right: 3%;
-  border-bottom:4px solid black
+  border-bottom:4px solid black;
+  word-wrap: break-word;
 }
 
 .article-article:hover .article-body {
