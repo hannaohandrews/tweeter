@@ -1,10 +1,10 @@
 
+
 .article-article {
-  width: 800px;
-  margin-left: 150px;
+  width: 90%;
   border-style: solid;
-  border :5px solid black;
-  margin: 10%
+  border :3px solid black;
+  margin: 5%
 }
 
 .article-article:hover {
@@ -44,7 +44,7 @@
 .article-username {
   flex-direction: row;
   margin-right: 5%;
-  opacity: 0;
+
   
 }
 
