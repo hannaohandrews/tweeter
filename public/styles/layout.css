@@ -21,7 +21,6 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
 .container {
   padding-left: 5%;
   padding-right: 5%;
@@ -29,12 +28,9 @@ body {
   align-items: center;
   background-color: #f4f1ec;
   font-family:'Source sans Pro', sans-serif;
-
 }
 
-
 @media (min-width: 768px) { 
-
   body {
     display: flex;
     flex-direction: row;
@@ -50,14 +46,12 @@ body {
     color:red
   }
 
-
 header.main-header {
   width: 30%;
   height: 10%;
   margin-top: 200px;
   margin-left: 5%;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-
 }
 
 .container {
@@ -68,7 +62,6 @@ header.main-header {
   align-items: center;
   background-color: #f4f1ec;
   font-family:'Source sans Pro', sans-serif;
-
 }
 
 .article-article {
@@ -82,7 +75,7 @@ header.main-header {
 
 };
 
-}
+
 
 @media only screen and(min-width: 1024px) {  
 
@@ -101,14 +94,12 @@ header.main-header {
     color:red;
   }
 
-
 header.main-header {
   width: 30%;
   height: 10%;
   margin-top: 200px;
   margin-left: 5%;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-
 }
 
 .container {
@@ -119,7 +110,6 @@ header.main-header {
   align-items: center;
   background-color: #f4f1ec;
   font-family:'Source sans Pro', sans-serif;
-
 }
 
 .article-article {

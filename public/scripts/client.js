@@ -1,5 +1,7 @@
 // jQuery detects that the document is ready
 // codes will only run once the page Document Object Model (DDM) is ready for JS codes to execude
+
+
 $(document).ready(function () {
 
   const maxNumber = 140;
@@ -50,7 +52,7 @@ $(document).ready(function () {
         </p>        
       <footer class="article-footer">
         <div class="article-div-footer">
-          <p> ${data.created_at} </p>
+          <p> ${moment(data.created_at).fromNow()}</p>
           <div class="article-div-footer-icons">
             <p class ="article-flag"> &#129412; </p> 
             <p class ="article-retweet"> &#128257; </p> 
