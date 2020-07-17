@@ -12,7 +12,18 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
-
-- Express
 - Node 5.10.x or above
+-"body-parser": "^1.15.2",
+-"chance": "^1.0.2",
+-"express": "^4.13.4",
+-"md5": "^2.1.0",
+-"moment": "^2.27.0"
 # tweeter
+
+
+## Screenshots
+
+!["Home Page"](https://github.com/hannaohandrews/tweeter/blob/master/home-page.png?raw=true)
+!["Smaller screen"](https://github.com/hannaohandrews/tweeter/blob/master/smaller-screen.png?raw=true)
+!["Too long"](https://github.com/hannaohandrews/tweeter/blob/master/too-long.png?raw=true)
+!["Too short"](https://github.com/hannaohandrews/tweeter/blob/master/too-short.png?raw=true)
