@@ -68,14 +68,12 @@ $(document).ready(function () {
   // accessing objects inside the arrays 
   // prepend makes it insert the latest tweet
   const renderTweets = function (tweets) {
+    $("#tweets-container").empty();
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
     }
   }
-  
-  renderTweets(tweetData);
-
 
   // redAlert = too long 
   // blueAlert = too short
@@ -99,10 +97,10 @@ $(document).ready(function () {
         data: $(this).serialize()
       })
 
-        .then(function(respose) {
+        .then(() => {
           $('.redAlert').slideUp(1000);
           $('.blueAlert').slideUp(1000);
-          loadTweets(respose);
+          loadTweets();
         });
 
     }
@@ -112,14 +110,16 @@ $(document).ready(function () {
 
   });
 
+
   // load the tweets once it is ready
   const loadTweets = function () {
     $.ajax({
         url: '/tweets/',
-        method: 'GET'
+        method: 'GET',
+        dataType: 'JSON'
       })
       .then(function (response) {
-        $("#tweets-container").empty();
+        //console.log(`res from load: ${JSON.stringify(response)}`)
         renderTweets(response);
       })
       .catch((err) => {
@@ -127,6 +127,7 @@ $(document).ready(function () {
       });
   };
 
+  loadTweets()
 
   $('#tweet-text').val('');
   $('.counter').val(maxNumber);
